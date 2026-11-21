@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Successful | Maison</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #F5F3EF;
+            color: #302725;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            height: 78px;
+            background: #251E1D;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #B4935A;
+            color: #D8BD8A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+        }
+
+        .brand h2 {
+            font-family: 'Playfair Display', serif;
+            color: #F5F0E8;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .nav-label {
+            color: #D8CDBF;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* MAIN SECTION */
+
+        .main-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 55px 20px;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(180,147,90,0.10), transparent 30%),
+                radial-gradient(circle at 85% 80%, rgba(132,60,70,0.07), transparent 30%),
+                #F5F3EF;
+        }
+
+        /* SUCCESS CARD */
+
+        .container {
+            width: 100%;
+            max-width: 540px;
+            background: #FFFFFF;
+            padding: 48px 45px;
+            border-radius: 10px;
+            border: 1px solid #EAE5DE;
+            box-shadow: 0 12px 40px rgba(55,40,35,0.07);
+            text-align: center;
+        }
+
+        /* SUCCESS ICON */
+
+        .success-icon {
+            width: 85px;
+            height: 85px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            background: #EAF3EA;
+            color: #47734B;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 42px;
+            border: 1px solid #D5E7D5;
+        }
+
+        .eyebrow {
+            color: #A17D49;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+            color: #302725;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .thank-you {
+            color: #843C46;
+            font-family: 'Playfair Display', serif;
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            color: #8B817B;
+            font-size: 13px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .gold-line {
+            width: 55px;
+            height: 2px;
+            background: #B4935A;
+            margin: 0 auto 28px;
+        }
+
+        /* ORDER DETAILS */
+
+        .order-details {
+            background: #FAF8F5;
+            border: 1px solid #EAE5DE;
+            border-radius: 7px;
+            padding: 23px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 0;
+            border-bottom: 1px solid #EAE5DE;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: #82766E;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .detail-value {
+            color: #302725;
+            font-size: 13px;
+            font-weight: 700;
+            text-align: right;
+            overflow-wrap: anywhere;
+        }
+
+        .order-id {
+            color: #843C46;
+        }
+
+        .total {
+            color: #843C46;
+            font-family: 'Playfair Display', serif;
+            font-size: 23px;
+        }
+
+        /* PAYMENT MESSAGE */
+
+        .payment-message {
+            background: #F0F5EF;
+            color: #47734B;
+            padding: 13px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 28px;
+        }
+
+        /* BUTTONS */
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+
+        .main-btn {
+            display: block;
+            text-decoration: none;
+            background: #843C46;
+            color: #FFFFFF;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: 0.3s;
+        }
+
+        .main-btn:hover {
+            background: #682D36;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(132,60,70,0.18);
+        }
+
+        .secondary-btn {
+            display: block;
+            text-decoration: none;
+            color: #843C46;
+            padding: 13px;
+            border: 1px solid #B4935A;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .secondary-btn:hover {
+            background: #B4935A;
+            color: #FFFFFF;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #251E1D;
+            color: #BDB0A3;
+            text-align: center;
+            padding: 23px 15px;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 550px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            nav h2 {
+                font-size: 21px;
+            }
+
+            .nav-label {
+                font-size: 9px;
+            }
+
+            .container {
+                padding: 35px 22px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .thank-you {
+                font-size: 19px;
+            }
+
+            .success-icon {
+                width: 72px;
+                height: 72px;
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="brand">
+            <div class="brand-logo">M</div>
+            <h2>Maison</h2>
+        </div>
+
+        <div class="nav-label">
+            Order Confirmation
+        </div>
+
+    </nav>
+
+
+    <!-- SUCCESS SECTION -->
+
+    <section class="main-section">
+
+        <div class="container">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <p class="eyebrow">
+                Order Confirmed
+            </p>
+
+            <h1>Order Placed Successfully!</h1>
+
+            <p class="thank-you">
+                Thank you for ordering!
+            </p>
+
+            <div class="gold-line"></div>
+
+            <p class="description">
+                Your order has been successfully placed.
+                We appreciate your order and hope you enjoy your meal!
+            </p>
+
+
+            <!-- ORDER DETAILS -->
+
+            <div class="order-details">
+
+                <div class="detail-row">
+
+                    <span class="detail-label">
+                        Order ID
+                    </span>
+
+                    <span class="detail-value order-id">
+                        #{{ order_id }}
+                    </span>
+
+                </div>
+
+                <div class="detail-row">
+
+                    <span class="detail-label">
+                        Total Amount
+                    </span>
+
+                    <span class="detail-value total">
+                        ₹{{ total }}
+                    </span>
+
+                </div>
+
+                <div class="detail-row">
+
+                    <span class="detail-label">
+                        Order Status
+                    </span>
+
+                    <span class="detail-value">
+                        Confirmed
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="payment-message">
+                ✓ Your payment has been recorded successfully.
+            </div>
+
+
+            <!-- ACTION BUTTONS -->
+
+            <div class="button-group">
+
+                <a href="/menu" class="main-btn">
+                    Continue Shopping →
+                </a>
+
+                <a href="/logout" class="secondary-btn">
+                    Logout
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        CRAFTED FOR BETTER CANTEEN MANAGEMENT · MAISON
+    </footer>
+
+</body>
+
+</html>

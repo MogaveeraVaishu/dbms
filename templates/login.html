@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Maison</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #F5F3EF;
+            color: #302725;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            height: 78px;
+            background: #251E1D;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #B4935A;
+            color: #D8BD8A;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+        }
+
+        .brand h2 {
+            font-family: 'Playfair Display', serif;
+            color: #F5F0E8;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        /* MAIN SECTION */
+
+        .main-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 55px 20px;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(180,147,90,0.10), transparent 30%),
+                radial-gradient(circle at 85% 80%, rgba(132,60,70,0.07), transparent 30%),
+                #F5F3EF;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 430px;
+            background: #FFFFFF;
+            padding: 45px 40px;
+            border-radius: 10px;
+            border: 1px solid #EAE5DE;
+            box-shadow: 0 12px 40px rgba(55,40,35,0.07);
+        }
+
+        .eyebrow {
+            color: #A17D49;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+            font-weight: 600;
+            color: #302725;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            text-align: center;
+            color: #8B817B;
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .gold-line {
+            width: 55px;
+            height: 2px;
+            background: #B4935A;
+            margin: 0 auto 25px;
+        }
+
+        /* FORM */
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: #514743;
+            margin-bottom: 9px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #DED6CD;
+            border-radius: 5px;
+            outline: none;
+            background: #FCFBF9;
+            color: #302725;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        input::placeholder {
+            color: #B0A69E;
+        }
+
+        input:focus {
+            border-color: #B4935A;
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(180,147,90,0.10);
+        }
+
+        /* LOGIN BUTTON */
+
+        button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 8px;
+            background: #843C46;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #682D36;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(132,60,70,0.18);
+        }
+
+        /* REGISTER LINK */
+
+        .register-text {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 13px;
+            color: #82766E;
+        }
+
+        .register-text a {
+            color: #843C46;
+            font-weight: 700;
+            text-decoration: none;
+            margin-left: 4px;
+        }
+
+        .register-text a:hover {
+            color: #B4935A;
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #251E1D;
+            color: #BDB0A3;
+            text-align: center;
+            padding: 22px 15px;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0 6%;
+            }
+
+            .container {
+                padding: 35px 25px;
+            }
+
+            h1 {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <div class="brand">
+            <div class="brand-logo">M</div>
+            <h2>Maison</h2>
+        </div>
+    </nav>
+
+    <!-- LOGIN SECTION -->
+
+    <section class="main-section">
+
+        <div class="container">
+
+            <p class="eyebrow">Welcome Back</p>
+
+            <h1>Canteen Login</h1>
+
+            <div class="gold-line"></div>
+
+            <p class="description">
+                Sign in to explore your favourite meals
+                and enjoy a convenient campus dining experience.
+            </p>
+
+            <form method="POST">
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <button type="submit">
+                    LOGIN →
+                </button>
+
+            </form>
+
+            <p class="register-text">
+                New Student?
+                <a href="/register">Register Here</a>
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+        CRAFTED FOR BETTER CANTEEN MANAGEMENT · MAISON
+    </footer>
+
+</body>
+</html>

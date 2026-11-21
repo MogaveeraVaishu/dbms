@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Maison | College Canteen</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #F5F3EF;
+            color: #302725;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            height: 80px;
+            background: #251E1D;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8%;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .brand-logo {
+            width: 42px;
+            height: 42px;
+            border: 1px solid #B4935A;
+            color: #D8BD8A;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+        }
+
+        .brand h2 {
+            color: #F5F0E8;
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .nav-label {
+            color: #D8CDBF;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            min-height: 610px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 20px;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(180,147,90,0.10), transparent 30%),
+                radial-gradient(circle at 85% 80%, rgba(132,60,70,0.08), transparent 30%),
+                #F5F3EF;
+        }
+
+        .hero-content {
+            max-width: 760px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            color: #A17D49;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: 1.15;
+            font-weight: 600;
+            color: #302725;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #843C46;
+            font-style: italic;
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            font-weight: 500;
+            color: #76645B;
+            margin-bottom: 22px;
+        }
+
+        .hero p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #8B817B;
+            max-width: 520px;
+            margin: 0 auto 35px;
+        }
+
+        .gold-line {
+            width: 65px;
+            height: 2px;
+            background: #B4935A;
+            margin: 0 auto 27px;
+        }
+
+        /* BUTTONS */
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .main-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #843C46;
+            color: #FFFFFF;
+            padding: 15px 32px;
+            border-radius: 5px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: 0.3s;
+            border: 1px solid #843C46;
+        }
+
+        .main-btn:hover {
+            background: #682D36;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(132,60,70,0.18);
+        }
+
+        .secondary-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: transparent;
+            color: #843C46;
+            padding: 15px 32px;
+            border: 1px solid #B4935A;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .secondary-btn:hover {
+            background: #B4935A;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* DECORATIVE SECTION */
+
+        .features {
+            background: #FFFFFF;
+            padding: 55px 8%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            border-top: 1px solid #EAE5DE;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 15px;
+        }
+
+        .feature-icon {
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #302725;
+            margin-bottom: 9px;
+        }
+
+        .feature p {
+            color: #8B817B;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #251E1D;
+            color: #BDB0A3;
+            text-align: center;
+            padding: 25px 15px;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 5%;
+            }
+
+            .hero {
+                min-height: 550px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brand h2 {
+                font-size: 21px;
+            }
+
+            .nav-label {
+                font-size: 9px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero p {
+                font-size: 13px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .main-btn,
+            .secondary-btn {
+                width: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <div class="brand">
+            <div class="brand-logo">M</div>
+            <h2>Maison</h2>
+        </div>
+
+        <div class="nav-label">
+            College Canteen
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Welcome to Maison
+            </div>
+
+            <div class="gold-line"></div>
+
+            <h1>
+                Good Food.<br>
+                <span>Good Moments.</span>
+            </h1>
+
+            <h2>Canteen Management System</h2>
+
+            <p>
+                Discover your favourite meals, explore delicious options
+                and enjoy a simple and convenient food ordering experience
+                right from your campus.
+            </p>
+
+            <div class="button-group">
+
+                <a href="/menu" class="main-btn">
+                    Explore Menu →
+                </a>
+
+                {% if session.get('role') == 'Student' %}
+
+                <a href="/my_orders" class="secondary-btn">
+                    My Orders
+                </a>
+
+                <a href="/logout" class="secondary-btn">
+                    Logout
+                </a>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURES -->
+
+    <section class="features">
+
+        <div class="feature">
+            <div class="feature-icon">🍽️</div>
+            <h3>Fresh & Delicious</h3>
+            <p>Explore a variety of food options made for your everyday cravings.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">🛍️</div>
+            <h3>Easy Ordering</h3>
+            <p>Choose your favourite food and place your order with ease.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">✨</div>
+            <h3>Convenient Experience</h3>
+            <p>Enjoy a smooth and organized campus canteen experience.</p>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+        CRAFTED FOR BETTER CANTEEN MANAGEMENT · MAISON
+    </footer>
+
+</body>
+</html>

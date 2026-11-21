@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration | Maison</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #F5F3EF;
+            font-family: 'DM Sans', sans-serif;
+            color: #302725;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background: #251E1D;
+            padding: 18px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #FFFFFF;
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            letter-spacing: 1px;
+        }
+
+        .brand-logo {
+            width: 38px;
+            height: 38px;
+            border: 1px solid #B4935A;
+            color: #D8BD8A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 21px;
+        }
+
+        .nav-link {
+            color: #D8BD8A;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-link:hover {
+            color: #FFFFFF;
+        }
+
+        /* MAIN SECTION */
+
+        .main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 55px 20px;
+        }
+
+        .register-card {
+            width: 100%;
+            max-width: 470px;
+            background: #FFFFFF;
+            padding: 45px 42px;
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(37, 30, 29, 0.07);
+            border: 1px solid #EAE5DE;
+        }
+
+        .eyebrow {
+            color: #B4935A;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+            font-weight: 600;
+            text-align: center;
+            color: #302725;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #8B817B;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        /* FORM */
+
+        .form-group {
+            margin-bottom: 19px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #554945;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #E4DED7;
+            border-radius: 6px;
+            background: #FAF9F7;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: #302725;
+            outline: none;
+            transition: 0.3s ease;
+        }
+
+        input::placeholder {
+            color: #AAA19A;
+        }
+
+        input:focus {
+            border-color: #B4935A;
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(180, 147, 90, 0.10);
+        }
+
+        /* BUTTON */
+
+        button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            background: #843C46;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 6px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background: #682D36;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(132, 60, 70, 0.18);
+        }
+
+        /* LOGIN LINK */
+
+        .login-text {
+            text-align: center;
+            margin-top: 25px;
+            color: #8B817B;
+            font-size: 13px;
+        }
+
+        .login-text a {
+            color: #843C46;
+            font-weight: 700;
+            text-decoration: none;
+            margin-left: 4px;
+        }
+
+        .login-text a:hover {
+            color: #B4935A;
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #251E1D;
+            color: #AFA39C;
+            text-align: center;
+            padding: 18px;
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 500px) {
+            .navbar {
+                padding: 15px 6%;
+            }
+
+            .brand {
+                font-size: 21px;
+            }
+
+            .register-card {
+                padding: 35px 23px;
+            }
+
+            h1 {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="brand">
+            <div class="brand-logo">M</div>
+            Maison
+        </div>
+
+        <a href="/login" class="nav-link">Login</a>
+    </nav>
+
+    <main class="main">
+
+        <div class="register-card">
+
+            <p class="eyebrow">Welcome to Maison</p>
+
+            <h1>Create Account</h1>
+
+            <p class="subtitle">
+                Join us and enjoy a better canteen experience.
+            </p>
+
+            <form method="POST">
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a password"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input
+                        type="text"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                    >
+                </div>
+
+                <button type="submit">Create Account</button>
+
+            </form>
+
+            <p class="login-text">
+                Already have an account?
+                <a href="/login">Login</a>
+            </p>
+
+        </div>
+
+    </main>
+
+    <footer>
+        CRAFTED FOR BETTER CANTEEN MANAGEMENT · MAISON
+    </footer>
+
+</body>
+</html>

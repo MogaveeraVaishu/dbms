@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Order History | Maison</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #F5F3EF;
+            color: #302725;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            height: 78px;
+            background: #251E1D;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8%;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #B4935A;
+            color: #D8BD8A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+        }
+
+        .brand h2 {
+            font-family: 'Playfair Display', serif;
+            color: #F5F0E8;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        nav a {
+            color: #E5D9C7;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 11px 18px;
+            border: 1px solid rgba(180, 147, 90, 0.4);
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #B4935A;
+            color: white;
+        }
+
+        /* MAIN CONTAINER */
+
+        .container {
+            width: 88%;
+            max-width: 1250px;
+            margin: 55px auto;
+            flex: 1;
+        }
+
+        /* PAGE HEADING */
+
+        .eyebrow {
+            color: #A17D49;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-weight: 600;
+            color: #302725;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #8B817B;
+            font-size: 14px;
+            margin-bottom: 22px;
+        }
+
+        .gold-line {
+            width: 55px;
+            height: 2px;
+            background: #B4935A;
+            margin-bottom: 35px;
+        }
+
+        /* ORDER CARD */
+
+        .order-card {
+            background: #FFFFFF;
+            border: 1px solid #EAE5DE;
+            border-radius: 9px;
+            padding: 28px;
+            box-shadow: 0 7px 25px rgba(55, 40, 35, 0.05);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 23px;
+            color: #302725;
+            margin-bottom: 23px;
+        }
+
+        /* TABLE */
+
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            min-width: 850px;
+        }
+
+        th {
+            background: #F5F3EF;
+            color: #776A62;
+            padding: 17px 15px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            border-bottom: 1px solid #EAE5DE;
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 19px 15px;
+            border-bottom: 1px solid #F0ECE7;
+            font-size: 13px;
+            color: #514743;
+            white-space: nowrap;
+        }
+
+        tbody tr:hover {
+            background: #FCFAF7;
+        }
+
+        .order-id {
+            color: #843C46;
+            font-weight: 700;
+        }
+
+        .amount {
+            font-weight: 700;
+            color: #843C46;
+        }
+
+        .food-name {
+            font-weight: 600;
+            color: #302725;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 7px 13px;
+            border-radius: 20px;
+            background: #EAF3EA;
+            color: #47734B;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* EMPTY ORDERS */
+
+        .empty-orders {
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .empty-icon {
+            font-size: 48px;
+            margin-bottom: 18px;
+        }
+
+        .empty-orders h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: #302725;
+            margin-bottom: 12px;
+        }
+
+        .empty-orders p {
+            color: #8B817B;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        /* BUTTON */
+
+        .menu-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #843C46;
+            color: #FFFFFF;
+            padding: 13px 25px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .menu-btn:hover {
+            background: #682D36;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(132, 60, 70, 0.18);
+        }
+
+        .bottom-link {
+            margin-top: 30px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #251E1D;
+            color: #BDB0A3;
+            text-align: center;
+            padding: 25px 15px;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .container {
+                width: 92%;
+                margin: 35px auto;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .order-card {
+                padding: 18px;
+            }
+
+        }
+
+        @media (max-width: 450px) {
+
+            nav h2 {
+                font-size: 20px;
+            }
+
+            nav a {
+                padding: 9px 11px;
+                font-size: 11px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="brand">
+            <div class="brand-logo">M</div>
+            <h2>Maison</h2>
+        </div>
+
+        <a href="/menu">← Back to Menu</a>
+
+    </nav>
+
+
+    <!-- MAIN CONTENT -->
+
+    <div class="container">
+
+        <p class="eyebrow">Your Dining Journey</p>
+
+        <h1>My Order History</h1>
+
+        <p class="subtitle">
+            Keep track of your previous orders and purchases.
+        </p>
+
+        <div class="gold-line"></div>
+
+
+        {% if orders %}
+
+        <div class="order-card">
+
+            <h2 class="section-title">Your Previous Orders</h2>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Order Date</th>
+                            <th>Total Amount</th>
+                            <th>Status</th>
+                            <th>Food Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for order in orders %}
+
+                        <tr>
+
+                            <td class="order-id">
+                                #{{ order[0] }}
+                            </td>
+
+                            <td>
+                                {{ order[1] }}
+                            </td>
+
+                            <td class="amount">
+                                ₹{{ order[2] }}
+                            </td>
+
+                            <td>
+                                <span class="status">
+                                    {{ order[3] }}
+                                </span>
+                            </td>
+
+                            <td class="food-name">
+                                {{ order[5] }}
+                            </td>
+
+                            <td>
+                                {{ order[6] }}
+                            </td>
+
+                            <td>
+                                ₹{{ order[7] }}
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        {% else %}
+
+        <div class="order-card empty-orders">
+
+            <div class="empty-icon">🛍️</div>
+
+            <h2>No Orders Yet</h2>
+
+            <p>
+                You haven't placed any orders yet.
+                Explore our menu and discover something delicious!
+            </p>
+
+            <a href="/menu" class="menu-btn">
+                Explore Menu →
+            </a>
+
+        </div>
+
+        {% endif %}
+
+
+        <div class="bottom-link">
+
+            <a href="/menu" class="menu-btn">
+                ← Back to Menu
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        CRAFTED FOR BETTER CANTEEN MANAGEMENT · MAISON
+    </footer>
+
+</body>
+
+</html>
